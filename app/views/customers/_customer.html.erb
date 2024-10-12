@@ -1,7 +1,11 @@
-<div class="customer-info box">
+<div class="customer-info cbox">
   <h2><%= customer.full_name %></h2>
+   <div class="img-box">
+     <%= image_tag customer.image if customer.image.attached? %>
+   </div>
+
   <p>Phone: <%= customer.phone_number %></p>
   <p>Email: <%= customer.email_address.present? ? customer.email_address : 'N/A' %></p>
   <p>Notes: <%= customer.notes %></p>
-  <%= image_tag customer.image if customer.image.attached? %>
+
 </div>
